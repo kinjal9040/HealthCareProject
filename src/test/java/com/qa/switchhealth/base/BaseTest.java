@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 
+import com.qa.switchhealth.pages.AllTest;
 import com.qa.switchhealth.pages.HPVPage;
 import com.qa.switchhealth.pages.HomePage;
 import com.qa.switchhealth.pages.LoginPage;
@@ -24,6 +25,7 @@ public class BaseTest {
 	protected Properties prop;
 	protected cartPage cart;
 	protected account acc;
+	protected AllTest test;
 	
 	@BeforeTest
 	public void setup() {
@@ -35,6 +37,7 @@ public class BaseTest {
 		home=new HomePage(driver);
 		hpv=new HPVPage(driver);
 		acc=new account(driver);
+		test=new AllTest(driver);
 		
 		
 	}

@@ -19,6 +19,7 @@ public class HomePage {
 	private By select1=(By.xpath("//div[normalize-space()='Human Papillomavirus (HPV)']"));
 	private By options1=(By.xpath("//a[@class='styles__TestLink-sc-8ig833-34 gQWxpl']"));
 	private By totaltest=(By.xpath("//div[@class='styles__RowContainer-sc-8ig833-3 styles__TestTypeDropdownRow-sc-8ig833-36 bXUkMO kexpTq']"));
+	private By alltest=(By.xpath("//div[@class='styles__RowContainer-sc-8ig833-3 styles__TestTypeDropdownRow-sc-8ig833-36 bXUkMO kexpTq'][normalize-space()='View all tests']"));
 	
 	public String getTitle() {
 		String title=driver.getTitle();
@@ -56,6 +57,16 @@ public class HomePage {
 		driver.findElement(select1).click();
 		return new HPVPage(driver);
 		
+		
+	}
+	
+	public AllTest viewalltest() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(test).click();
+		Thread.sleep(2000);
+		driver.findElement(alltest).click();
+		Thread.sleep(2000);
+		return new AllTest(driver);
 		
 	}
 	
